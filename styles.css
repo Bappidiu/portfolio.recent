@@ -1,0 +1,47 @@
+/* Scroll reveal */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(24px); 
+    transition: opacity .7s ease, transform .7s ease; 
+  }
+  .reveal.in { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+  
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Shimmer animation */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .animate-shimmer {
+    background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  /* Typewriter effect */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end), blink .75s step-end infinite;
+  }
+  
