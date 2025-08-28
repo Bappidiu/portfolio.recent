@@ -1,29 +1,29 @@
-// Mobile menu toggle
-const openBtn = document.getElementById('openMenu');
-const mobileMenu = document.getElementById('mobileMenu');
-openBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+// Falling Stars Effect
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-// Dark mode toggle
-const themeToggle = document.getElementById('themeToggle');
-const themeToggleMobile = document.getElementById('themeToggleMobile');
-const root = document.documentElement;
-const applyTheme = (dark) => dark ? root.classList.add('dark') : root.classList.remove('dark');
-applyTheme(localStorage.getItem('theme') === 'dark');
-const swap = () => {
-  const isDark = !root.classList.contains('dark');
-  applyTheme(isDark);
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+const stars = [];
+for (let i = 0; i < 100; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 2,
+    speed: Math.random() * 2 + 1
+  });
 }
-themeToggle.addEventListener('click', swap);
-themeToggleMobile.addEventListener('click', swap);
 
-// Scroll reveal
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.12 });
-revealEls.forEach((el) => io.observe(el));
-
-// Year in footer
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+function animateStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "white";
+  stars.forEach(star => {
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fill();
+    star.y += star.speed;
+    if (star.y > canvas.height) star.y = 0;
+  });
+  requestAnimationFrame(animateStars);
+}
+animateStars();

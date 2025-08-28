@@ -1,169 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-950 text-white relative overflow-x-hidden">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  </head>
-  <body class="bg-gray-900 text-white font-[Inter]">
+  <!-- Background Canvas for Falling Stars -->
+  <canvas id="bgCanvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
 
-    <!-- Navbar -->
-    <header class="flex justify-between items-center p-4 bg-gray-800 sticky top-0 z-50 shadow-md">
-      <h1 class="text-2xl font-bold">My Portfolio</h1>
-      <nav>
-        <ul class="flex gap-6">
-          <li><a href="#home" class="hover:text-sky-400">Home</a></li>
-          <li><a href="#about" class="hover:text-sky-400">About</a></li>
-          <li><a href="#skills" class="hover:text-sky-400">Skills</a></li>
-          <li><a href="#experience" class="hover:text-sky-400">Experience</a></li>
-          <li><a href="#projects" class="hover:text-sky-400">Projects</a></li>
-          <li><a href="#blog" class="hover:text-sky-400">Blog</a></li>
-          <li><a href="#contact" class="hover:text-sky-400">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-gray-900/60 backdrop-blur-sm border-b border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <h1 class="text-xl font-bold text-cyan-400">MyPortfolio</h1>
+      <ul class="flex space-x-6 text-gray-300 font-medium">
+        <li><a href="#home" class="hover:text-cyan-400 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-cyan-400 transition">About</a></li>
+        <li><a href="#skills" class="hover:text-cyan-400 transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-cyan-400 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-cyan-400 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="text-center py-20 relative overflow-hidden">
-      <h2 class="text-5xl font-extrabold mb-4 typewriter">Hi, I'm John Doe</h2>
-      <p class="text-gray-300 max-w-xl mx-auto mb-6">Web Developer passionate about crafting modern, responsive web apps with stunning UI & UX.</p>
-      <a href="#projects" class="bg-sky-500 px-6 py-3 rounded-full hover:bg-sky-600 animate-shimmer">Explore My Work</a>
-      <div class="absolute -z-10 top-10 left-10 w-60 h-60 bg-sky-400 opacity-20 rounded-full animate-float"></div>
-      <div class="absolute -z-10 bottom-10 right-10 w-80 h-80 bg-fuchsia-400 opacity-20 rounded-full animate-float"></div>
-    </section>
+<!-- Hero Section -->
+<section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-20 pt-20 relative">
+  
+    <!-- Left Content: Name & Details -->
+    <div class="flex-1 text-left space-y-6 z-10">
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in">
+        Hi, I'm <span class="text-cyan-400">Badhon Bappi</span>
+      </h2>
+      <p class="text-gray-300 max-w-lg text-lg animate-slide-up">
+        Frontend Developer | React Enthusiast | Lifelong Learner | Crafting beautiful and functional web experiences.
+      </p>
+      <a href="#contact" class="inline-block px-6 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full text-lg font-medium transition transform hover:scale-105">
+        Hire Me
+      </a>
+    </div>
+  
+    <!-- Right Content: Profile Image -->
+    <div class="flex-1 mt-10 md:mt-0 flex justify-center relative animate-float z-10">
+      <img src="./assets/img5.jpg" alt="Badhon Bappi" class="rounded-full border-4 border-cyan-400 shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover">
+    </div>
+  
+  </section>
+  
+  
 
-    <!-- About Section -->
-    <section id="about" class="py-16 text-center reveal">
-      <h2 class="text-3xl font-bold mb-4">About Me</h2>
-      <img src="https://via.placeholder.com/150" class="rounded-full w-40 h-40 mx-auto mb-4 border-4 border-sky-500" alt="Profile">
-      <p class="max-w-2xl mx-auto text-gray-400">I'm a full-stack developer skilled in HTML, CSS, JavaScript, React, and Node.js. I focus on building interactive and efficient solutions for businesses and startups.</p>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-900/50">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-6">About Me</h3>
+      <p class="text-gray-300 text-lg leading-relaxed">I am passionate about building interactive, modern, and scalable web applications. With a strong foundation in JavaScript, React, and Tailwind, I love bringing ideas to life with creativity and clean design principles.</p>
+      <img src="https://via.placeholder.com/200" alt="My Photo" class="mx-auto mt-8 rounded-full border-4 border-cyan-400 shadow-lg animate-float">
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-gray-800 reveal">
-      <h2 class="text-3xl font-bold text-center mb-10">Skills</h2>
-      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto px-6">
-        <div>
-          <p>HTML & CSS</p>
-          <div class="w-full bg-gray-700 rounded-full h-3 mt-2">
-            <div class="bg-sky-500 h-3 rounded-full w-11/12"></div>
-          </div>
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 text-center">
+    <h3 class="text-3xl font-bold mb-10">Skills & Tools</h3>
+    <div class="marquee-container">
+      <div class="marquee">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Node.js</span><span>Tailwind CSS</span><span>Git</span><span>Figma</span><span>Firebase</span><span>MongoDB</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-900/50">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-10">Projects</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transition">
+          <img src="https://via.placeholder.com/300x200" class="w-full rounded-md mb-4" alt="Project 1">
+          <h4 class="text-xl font-semibold mb-2">Project One</h4>
+          <p class="text-gray-400 mb-2">A modern responsive website built using React and Tailwind CSS.</p>
+          <a href="#" class="text-cyan-400 hover:underline">View Details</a>
         </div>
-        <div>
-          <p>JavaScript</p>
-          <div class="w-full bg-gray-700 rounded-full h-3 mt-2">
-            <div class="bg-fuchsia-500 h-3 rounded-full w-10/12"></div>
-          </div>
+        <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transition">
+          <img src="https://via.placeholder.com/300x200" class="w-full rounded-md mb-4" alt="Project 2">
+          <h4 class="text-xl font-semibold mb-2">Project Two</h4>
+          <p class="text-gray-400 mb-2">An interactive dashboard featuring real-time data visualization.</p>
+          <a href="#" class="text-cyan-400 hover:underline">View Details</a>
         </div>
-        <div>
-          <p>React & Tailwind</p>
-          <div class="w-full bg-gray-700 rounded-full h-3 mt-2">
-            <div class="bg-green-500 h-3 rounded-full w-9/12"></div>
-          </div>
-        </div>
-        <div>
-          <p>Node.js</p>
-          <div class="w-full bg-gray-700 rounded-full h-3 mt-2">
-            <div class="bg-yellow-500 h-3 rounded-full w-8/12"></div>
-          </div>
+        <div class="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transition">
+          <img src="https://via.placeholder.com/300x200" class="w-full rounded-md mb-4" alt="Project 3">
+          <h4 class="text-xl font-semibold mb-2">Project Three</h4>
+          <p class="text-gray-400 mb-2">A full-stack application with authentication and payment gateway.</p>
+          <a href="#" class="text-cyan-400 hover:underline">View Details</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-16 text-center reveal">
-      <h2 class="text-3xl font-bold mb-10">Experience</h2>
-      <div class="max-w-4xl mx-auto space-y-8">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">Frontend Developer - ABC Tech</h3>
-          <p class="text-gray-400">Jan 2023 - Present</p>
-          <p class="mt-2 text-gray-300">Developing dynamic, mobile-friendly interfaces using React, Tailwind, and JavaScript.</p>
-        </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold">Intern - Web Solutions</h3>
-          <p class="text-gray-400">Jun 2022 - Dec 2022</p>
-          <p class="mt-2 text-gray-300">Worked on WordPress and basic frontend projects for small businesses.</p>
-        </div>
-      </div>
-    </section>
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 text-center">
+    <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
+    <p class="text-gray-300 mb-8">Interested in working together? Let's talk!</p>
+    <a href="mailto:example@email.com" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 rounded-full text-lg font-medium transition transform hover:scale-105">Send Email</a>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-800 reveal">
-      <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-        <div class="bg-gray-700 rounded-xl p-4 hover:scale-105 transition">
-          <img src="https://via.placeholder.com/400x200" class="rounded-lg mb-4" alt="Project 1">
-          <h3 class="text-xl font-semibold">Portfolio Website</h3>
-          <p class="text-gray-400 mb-2">Personal portfolio with animations & responsive design.</p>
-          <a href="#" class="text-sky-400 hover:underline">View Code</a>
-        </div>
-        <div class="bg-gray-700 rounded-xl p-4 hover:scale-105 transition">
-          <img src="https://via.placeholder.com/400x200" class="rounded-lg mb-4" alt="Project 2">
-          <h3 class="text-xl font-semibold">E-commerce Platform</h3>
-          <p class="text-gray-400 mb-2">Built using MERN stack with payment integration.</p>
-          <a href="#" class="text-sky-400 hover:underline">View Code</a>
-        </div>
-        <div class="bg-gray-700 rounded-xl p-4 hover:scale-105 transition">
-          <img src="https://via.placeholder.com/400x200" class="rounded-lg mb-4" alt="Project 3">
-          <h3 class="text-xl font-semibold">Blog Application</h3>
-          <p class="text-gray-400 mb-2">Full-stack blog app with authentication and CRUD features.</p>
-          <a href="#" class="text-sky-400 hover:underline">View Code</a>
-        </div>
-      </div>
-    </section>
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-900 text-center text-gray-500">
+    &copy; 2025 MyPortfolio. All rights reserved.
+  </footer>
 
-    <!-- Blog Section -->
-    <section id="blog" class="py-16 text-center reveal">
-      <h2 class="text-3xl font-bold mb-8">Blog</h2>
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">Getting Started with Tailwind</h3>
-          <p class="text-gray-400 mb-3">A beginner's guide to using TailwindCSS for building responsive UIs.</p>
-          <a href="#" class="text-sky-400 hover:underline">Read More</a>
-        </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">Why Learn React?</h3>
-          <p class="text-gray-400 mb-3">Advantages of using React for building modern web apps.</p>
-          <a href="#" class="text-sky-400 hover:underline">Read More</a>
-        </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow-md hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">Top 5 Web Dev Trends</h3>
-          <p class="text-gray-400 mb-3">Stay ahead with these latest web development trends in 2025.</p>
-          <a href="#" class="text-sky-400 hover:underline">Read More</a>
-        </div>
-      </div>
-    </section>
+<!-- Custom Cursor -->
+<div id="cursor-custom">
+  <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Diamond Cursor">
+</div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 text-center reveal">
-      <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-      <p class="text-gray-400 mb-6">For collaborations, projects, or a quick hello 👋</p>
-      <a href="mailto:example@mail.com" class="bg-fuchsia-500 px-6 py-3 rounded-full hover:bg-fuchsia-600">Say Hello</a>
-    </section>
+<script>
+  const cursorCustom = document.getElementById("cursor-custom");
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-center py-6">
-      <div class="flex justify-center gap-6 mb-4">
-        <a href="#" class="hover:text-sky-400">LinkedIn</a>
-        <a href="#" class="hover:text-sky-400">GitHub</a>
-        <a href="#" class="hover:text-sky-400">Twitter</a>
-      </div>
-      <p class="text-gray-500">&copy; 2025 John Doe. All rights reserved.</p>
-    </footer>
+  document.addEventListener("mousemove", (e) => {
+    cursorCustom.style.left = e.clientX + "px";
+    cursorCustom.style.top = e.clientY + "px";
+  });
 
-    <!-- Scroll Reveal Script -->
-    <script>
-      const reveals = document.querySelectorAll(".reveal");
-      window.addEventListener("scroll", () => {
-        reveals.forEach(el => {
-          if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("in");
-        });
-      });
-    </script>
-  </body>
+  // Hover effect on interactive elements
+  document.querySelectorAll("a, button, .card").forEach((el) => {
+    el.addEventListener("mouseenter", () => cursorCustom.classList.add("hover"));
+    el.addEventListener("mouseleave", () => cursorCustom.classList.remove("hover"));
+  });
+</script>
+
+  
+
+
+  <script src="script.js"></script>
+</body>
 </html>
