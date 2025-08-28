@@ -3,29 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Badhon Shom Bappi</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/favicon.avif" type="image/png">
+
 </head>
 <body class="bg-gray-950 text-white relative overflow-x-hidden">
 
   <!-- Background Canvas for Falling Stars -->
   <canvas id="bgCanvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-gray-900/60 backdrop-blur-sm border-b border-gray-700">
-    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-      <h1 class="text-xl font-bold text-cyan-400">MyPortfolio</h1>
-      <ul class="flex space-x-6 text-gray-300 font-medium">
-        <li><a href="#home" class="hover:text-cyan-400 transition">Home</a></li>
-        <li><a href="#about" class="hover:text-cyan-400 transition">About</a></li>
-        <li><a href="#skills" class="hover:text-cyan-400 transition">Skills</a></li>
-        <li><a href="#projects" class="hover:text-cyan-400 transition">Projects</a></li>
-        <li><a href="#contact" class="hover:text-cyan-400 transition">Contact</a></li>
-      </ul>
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-gray-900/60 backdrop-blur-sm border-b border-gray-700">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+    <!-- Logo -->
+    <h1 class="text-xl font-bold text-cyan-400">MyPortfolio</h1>
+
+    <!-- Hamburger Button (Mobile) -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-gray-300 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
-  </nav>
+
+    <!-- Menu Links -->
+    <ul id="menu" class="hidden md:flex space-x-6 text-gray-300 font-medium">
+      <li><a href="#home" class="hover:text-cyan-400 transition">Home</a></li>
+      <li><a href="#about" class="hover:text-cyan-400 transition">About</a></li>
+      <li><a href="#skills" class="hover:text-cyan-400 transition">Skills</a></li>
+      <li><a href="#projects" class="hover:text-cyan-400 transition">Projects</a></li>
+      <li><a href="#contact" class="hover:text-cyan-400 transition">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Mobile Menu -->
+  <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 px-4 pb-4 text-gray-300 font-medium bg-gray-900/90 border-t border-gray-700">
+    <li><a href="#home" class="block hover:text-cyan-400 transition">Home</a></li>
+    <li><a href="#about" class="block hover:text-cyan-400 transition">About</a></li>
+    <li><a href="#skills" class="block hover:text-cyan-400 transition">Skills</a></li>
+    <li><a href="#projects" class="block hover:text-cyan-400 transition">Projects</a></li>
+    <li><a href="#contact" class="block hover:text-cyan-400 transition">Contact</a></li>
+  </ul>
+</nav>
+
 
 <!-- Hero Section -->
 <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-20 pt-20 relative">
@@ -33,7 +57,7 @@
     <!-- Left Content: Name & Details -->
     <div class="flex-1 text-left space-y-6 z-10">
       <h2 class="text-4xl md:text-6xl font-extrabold mb-4 animate-fade-in">
-        Hi, I'm <span class="text-cyan-400">Badhon Bappi</span>
+        Hi, I'm <span class="text-cyan-400">Badhon</span>
       </h2>
       <p class="text-gray-300 max-w-lg text-lg animate-slide-up">
         Frontend Developer | React Enthusiast | Lifelong Learner | Crafting beautiful and functional web experiences.
@@ -57,7 +81,7 @@
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h3 class="text-3xl font-bold mb-6">About Me</h3>
       <p class="text-gray-300 text-lg leading-relaxed">I am passionate about building interactive, modern, and scalable web applications. With a strong foundation in JavaScript, React, and Tailwind, I love bringing ideas to life with creativity and clean design principles.</p>
-      <img src="https://via.placeholder.com/200" alt="My Photo" class="mx-auto mt-8 rounded-full border-4 border-cyan-400 shadow-lg animate-float">
+      <img src="./assets/img3.jpg" alt="My Photo" class="mx-auto mt-8 rounded-full border-4 border-cyan-400 shadow-lg animate-float w-70 h-60">
     </div>
   </section>
 

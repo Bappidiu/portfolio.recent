@@ -4,6 +4,14 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+
+
 const stars = [];
 for (let i = 0; i < 100; i++) {
   stars.push({
