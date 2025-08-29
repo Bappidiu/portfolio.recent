@@ -109,3 +109,16 @@ body { cursor: none; }
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-5px); }
 }
+
+/* Slide-up animation for cards */
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.animate-slide-up { animation: slideUp 1.2s ease-out forwards; }
+
+/* Floating decorative circles (if needed) */
+@keyframes bounceSlow { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+@keyframes bounceFast { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+.animate-bounce-slow { animation: bounceSlow 4s infinite ease-in-out; }
+.animate-bounce-fast { animation: bounceFast 2s infinite ease-in-out; }
